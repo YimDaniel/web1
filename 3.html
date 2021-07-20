@@ -23,23 +23,37 @@
         </div>
     </div>
     <!-- Night & Day mode toggle -->
-    <input type="button" id="night_day" value="change night mode" onclick="changeColor()"><br><br>
+    <input type="button" id="night_day" value="change night mode" onclick="changeColor2()"><br><br>
     <script>
         let button_value = document.querySelector('#night_day');
         let bodySelector = document.querySelector('body');
         let body_data = document.querySelector('body').dataset.mode;
         let header = document.querySelector('h1');
-        function changeColor () {
+        var Body = {
+            changeBackgroundColor : function (color) {
+                bodySelector.style.backgroundColor = color;
+            },
+            changeColor : function (color) {
+                bodySelector.style.color = color;
+            },
+            changeBodyData : function (mode) {
+                body_data = mode;
+            },
+            changeButtonValue : function (string) {
+                button_value.value = string;
+            }
+        }
+        function changeColor2 () {
             if (body_data === "day") {
-                bodySelector.style.backgroundColor = "rgb(53, 53, 53)";
-                bodySelector.style.color = "white";
-                body_data = "night";
-                button_value.value = 'change day mode';
+                Body.changeBackgroundColor("rgb(53, 53, 53)");
+                Body.changeColor("white");
+                Body.changeBodyData("night");
+                Body.changeButtonValue('change day mode');
             } else {
-                bodySelector.style.backgroundColor = "white";
-                bodySelector.style.color = "rgb(53, 53, 53)";
-                body_data = "day";
-                button_value.value = 'change night mode';
+                Body.changeBackgroundColor("white");
+                Body.changeColor("rgb(53, 53, 53)");
+                Body.changeBodyData("day");
+                Body.changeButtonValue('change night mode');
             }
         }
     </script>
