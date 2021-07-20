@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="1.css">
     <title>WEB1 - CSS</title>
 </head>
-<body>
+<body data-mode="day">
     <h1><a href="index.html">WEB</a></h1>
     <div id="grid">
         <div id="grid_left">
@@ -23,5 +23,26 @@
             <iframe width="560" height="315" src="https://www.youtube.com/embed/LVLHprUg-PM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="padding: 25px 0 25px 0;"></iframe>
         </div>
     </div>
+    <!-- Night & Day mode toggle -->
+    <input type="button" id="night_day" value="change night mode" onclick="changeColor()"><br><br>
+    <script>
+        let button_value = document.querySelector('#night_day');
+        let bodySelector = document.querySelector('body');
+        let body_data = document.querySelector('body').dataset.mode;
+        let header = document.querySelector('h1');
+        function changeColor () {
+            if (body_data === "day") {
+                bodySelector.style.backgroundColor = "rgb(53, 53, 53)";
+                bodySelector.style.color = "white";
+                body_data = "night";
+                button_value.value = 'change day mode';
+            } else {
+                bodySelector.style.backgroundColor = "white";
+                bodySelector.style.color = "rgb(53, 53, 53)";
+                body_data = "day";
+                button_value.value = 'change night mode';
+            }
+        }
+    </script>
 </body>
 </html>

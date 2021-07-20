@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="1.css">
     <title>WEB1 - JAVASCRIPT</title>
 </head>
-<body>
+<body data-mode="day">
     <h1><a href="index.html">WEB</a></h1>
     <div id="grid">
         <div id="grid_left">
@@ -22,6 +22,28 @@
             <p>JavaScript often abbreviated as JS, is a programming language that conforms to the ECMAScript specification. JavaScript is high-level, often just-in-time compiled, and multi-paradigm. It has curly-bracket syntax, dynamic typing, prototype-based object-orientation, and first-class functions.<br> Alongside HTML and CSS, JavaScript is one of the core technologies of the World Wide Web.[10] Over 97% of websites use it client-side for web page behavior, often incorporating third-party libraries. All major web browsers have a dedicated JavaScript engine to execute the code on the user's device.</p>
         </div>
     </div>
+    <!-- Night & Day mode toggle -->
+    <input type="button" id="night_day" value="change night mode" onclick="changeColor()"><br><br>
+    <script>
+        let button_value = document.querySelector('#night_day');
+        let bodySelector = document.querySelector('body');
+        let body_data = document.querySelector('body').dataset.mode;
+        let header = document.querySelector('h1');
+        function changeColor () {
+            if (body_data === "day") {
+                bodySelector.style.backgroundColor = "rgb(53, 53, 53)";
+                bodySelector.style.color = "white";
+                body_data = "night";
+                button_value.value = 'change day mode';
+            } else {
+                bodySelector.style.backgroundColor = "white";
+                bodySelector.style.color = "rgb(53, 53, 53)";
+                body_data = "day";
+                button_value.value = 'change night mode';
+            }
+        }
+    </script>
+    <!-- comment -->
     <div id="disqus_thread" style="padding: 30px;"></div>
     <script>
         /**

@@ -4,7 +4,7 @@ body {
   color: rgb(53, 53, 53);
 }
 a {
-  color: rgb(63, 62, 62);
+  color: rgb(97, 150, 219);
   text-decoration: none;
   cursor: grab;
   /* transition: .4s ease-in; */
@@ -19,7 +19,7 @@ a:hover {
 h1 {
   font-size: 60px;
   text-align: center;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid gray;
   padding: 30px;
   margin: 0;
 }
@@ -40,6 +40,13 @@ h2 {
 #gird_right {
   padding: 0 37px 0 37px;
 }
+#night_day {
+  margin: 37px;
+  border: 1px solid rgb(97, 150, 219);
+  background-color: rgb(161, 194, 238);
+  color: rgb(53, 53, 53);
+  border-radius: 4px;
+}
 @media(max-width:800px) {
   body {
     font-size: 14px;
@@ -47,7 +54,7 @@ h2 {
   h1 {
     font-size: 30px;
     text-align: center;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid gray;
     padding: 30px;
     margin: 0;
   }
